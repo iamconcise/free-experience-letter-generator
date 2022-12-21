@@ -200,7 +200,7 @@
                     <div class="w-100" style="height:7px"></div>
                     <p>During the tenure mentioned above, <span id='fileduplicateemployeename'>Name</span> has performed <span id='filepronoun'>his</span> duties and responsibilities with sincerity, dedication and hard work. <span id="fileduplicatepronoun">He</span> is professionally sound and hard-working and has proven to be helpful in the company repeatedly.</p>
                     <div class="w-100" style="height:7px"></div>
-                    <p>This is to inform that employeename has been relieved of all duties. We wish all the best for <span id='filepronountwo'>his</span> future endeavors.</p> 
+                    <p>This is to inform that <span id='fileemployeenametwo'>employeename</span> has been relieved of all duties. We wish all the best for <span id='filepronountwo'>his</span> future endeavors.</p> 
                     <div class="w-100" style="height:7px"></div>
                     <div id="filehrsignature" class="resizable"></div>
                     <b id="hrsignaturelabel">Issuer Signature</span></b><br>
@@ -257,6 +257,8 @@
                     $('#fileduplicate'+fieldname).text($(this).val());
                 if(fieldname=='employeename')
                     $('#fileduplicate'+fieldname).text($(this).val());
+                if(fieldname=='employeename')
+                    $('#fileemployeenametwo').text($(this).val());
                 if(fieldname=='gender')
                     $('#filepronoun').text($(this).val()=='m'?'his':'her');
                 if(fieldname=='gender')
@@ -281,7 +283,9 @@
                     {
                     $('#file'+fieldname).text(defaultvalues[fieldname]);
                     $('#fileduplicate'+fieldname).text(defaultvalues[fieldname]);
+                    $('#employeenametwo').text(defaultvalues[fieldname]);
                     }
+                    
                     
                 }
             });
