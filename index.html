@@ -9,7 +9,7 @@
       <style>
         body{
             font-family: "Times New Roman", Times, serif !important;
-            background: linear-gradient(8deg, rgba(103,103,111,1) 0%, rgba(84,84,168,1) 35%, rgba(0,212,255,1) 100%);
+            /* background: linear-gradient(8deg, rgba(103,103,111,1) 0%, rgba(84,84,168,1) 35%, rgba(0,212,255,1) 100%); */
         }
         @media only screen and (min-width: 1280px) {
             #previewbutton{
@@ -49,7 +49,7 @@
         background: #DADADA; 
         }
         #filecontent,#formdiv{
-            box-shadow: 0 3px 30px rgb(0 0 0 / 0.5);
+            box-shadow: 0 3px 5px rgb(0 0 0 / 0.5);
         }
         .resizable {
         display: inline-block;
@@ -67,6 +67,18 @@
             box-shadow: -1px 14px 20px -21px rgba(0,0,0,0.75);
             -webkit-box-shadow: -1px 14px 20px -21px rgba(0,0,0,0.75);
             -moz-box-shadow: -1px 14px 20px -21px rgba(0,0,0,0.75);
+             
+        }
+        #download-button{
+           border:none;
+            color:white;
+            padding:10px 10px;
+            border-radius: 5px;
+        }
+        nav,#download-button{
+            /* background: linear-gradient(8deg, rgba(103,103,111,1) 0%, rgba(84,84,168,1) 35%, rgba(0,212,255,1) 100%);  */
+            background: -webkit-gradient(linear, left top, right top, from(#0072ff), to(#00d4ff));
+    background: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
         }
       </style>
   
@@ -162,13 +174,13 @@
             </div>
             <div style="height:10%;" class="bg-white">
                 <div class="d-flex h-100 flex-row mx-auto align-items-center justify-content-center" style="width:90%">
-                    <button class='w-100 btn btn-primary'  id="previewbutton">Preview</button>
-                      <button class='w-100 btn btn-success' id="download-button" >Download PDF</button>
+                    <button class='w-100 btn btn-light border'  id="previewbutton" style="margin:0px 5px">Preview</button>
+                      <button class='w-100' id="download-button">Download PDF</button>
                 </div>
             </div>
             
         </div>
-        <div id="lettercontainer" class="col-sm-12 col-xs-12 col-md-9" style="height:100vh;overflow:auto;padding:0px 150px 0px 150px">
+        <div id="lettercontainer" class="col-sm-12 col-xs-12 col-md-9" style="height:100vh;overflow:auto;padding:0px 150px 0px 10px">
             <div id="filecontent" class="bg-white h-100" style="padding:1in 1in 0in 1in">
                 <div>
                     <div class="logotype">
