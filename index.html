@@ -23,11 +23,10 @@
             #formdiv{
                 width:100%;
             }
-            #previewbutton{
+            /* #previewbutton{
                 display: block;
-            }
+            } */
         }
-    
         .modal-body {
             max-width: 100%;
             overflow-x: auto;
@@ -174,7 +173,7 @@
             </div>
             <div style="height:10%;" class="bg-white">
                 <div class="d-flex h-100 flex-row mx-auto align-items-center justify-content-center" style="width:90%">
-                    <button class='w-100 btn btn-light border'  id="previewbutton" style="margin:0px 5px">Preview</button>
+                    <!-- <button class='w-100 btn btn-light border'  id="previewbutton" style="margin:0px 5px">Preview</button> -->
                       <button class='w-100' id="download-button">Download PDF</button>
                 </div>
             </div>
@@ -325,7 +324,17 @@
         
       function generatePDF() {
         const element = document.getElementById("filecontent");
-        html2pdf().from(element).save();
+        var opt = {
+        margin:       0,
+        filename:     'myfile.pdf',
+        image:        { type: 'jpeg', quality: 1 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        //html2pdf().set(opt).from(element).save();
+        html2pdf().set(opt).from(element).toPdf().get('pdf').then(function (pdf) {
+        window.open(pdf.output('bloburl'), '');
+        });
       }
       button.addEventListener("click", generatePDF);
     </script>
