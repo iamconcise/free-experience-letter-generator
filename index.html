@@ -326,14 +326,14 @@
         const element = document.getElementById("filecontent");
         var opt = {
         margin:       0,
-        filename:     'myfile.pdf',
+        filename:     'experience-letter.pdf',
         image:        { type: 'jpeg', quality: 1 },
         html2canvas:  { scale: 2 },
         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
         };
         //html2pdf().set(opt).from(element).save();
         html2pdf().set(opt).from(element).toPdf().get('pdf').then(function (pdf) {
-        window.open(pdf.output('bloburl'), '');
+        window.open(pdf.output('bloburl'), '_blank');
         });
       }
       button.addEventListener("click", generatePDF);
